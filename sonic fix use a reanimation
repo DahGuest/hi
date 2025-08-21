@@ -89,14 +89,22 @@ local spd = Vector3.new(RootPart.Velocity.x,0,RootPart.Velocity.z).magnitude + 1
 local dir = Vector3.new(RootPart.Velocity.x,0,RootPart.Velocity.z).unit
  local GravPoint = RootPart.Velocity.y
  local NV = Vector3.new(0,0,0)
-		writefile("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3", game:HttpGet("https://github.com/DahGuest/hi/raw/main/ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3"))
+writefile("souljaboy.mp3", game:HttpGet("https://github.com/DahGuest/hi/raw/main/ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3"))
 
 local s = Instance.new("Sound", workspace)
-s.SoundId = getcustomasset("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3")
+s.SoundId = getcustomasset("souljaboy.mo3")
 s.Volume = 1
 s.Looped = true
+s.Pitch = 1
+s.TimePosition = 0
 s:Play()
-
+		music = Instance.new("Sound",RootPart)
+		music.Volume = 1
+		music.TimePosition = 0
+		music.Pitch = 1
+		music.SoundId = "rbxassetid://1251555494"
+		music.Looped = true
+		music:Play()
 		
 
 		boostsound = Instance.new("Sound",RootPart)
@@ -1139,6 +1147,57 @@ land()
 end
 
 
+function changemusic()
+    musicnum = musicnum + 1
+    music.TimePosition = 0
+    local osix = false
+    local spd = Vector3.new(RootPart.Velocity.x,0,RootPart.Velocity.z).magnitude
+    if musicnum > 14 then
+        musicnum = 1
+    end
+    if musicnum == 1 then
+        music.SoundId = "rbxassetid://179029173"
+    end
+    if musicnum == 2 then
+        music.SoundId = "rbxassetid://146443855"
+        end
+        if musicnum == 3 then
+           music.SoundId = "rbxassetid://1342408291" 
+          end
+          if musicnum == 4 then
+            music.SoundId = "rbxassetid://201219416"  
+        end
+        if musicnum == 5 then
+music.SoundId = "rbxassetid://1390472571" 
+end
+        if musicnum == 6 then
+            osix = true
+music.SoundId = "rbxassetid://249974783" 
+end
+if musicnum == 7 then
+    music.SoundId = "rbxassetid://1851880603"
+end
+if musicnum == 8 then
+ music.SoundId = "rbxassetid://412034984"
+end
+if musicnum == 9 then
+   music.SoundId = "rbxassetid://536915629"
+end
+if musicnum == 10 then
+music.SoundId = "rbxassetid://1200005861"
+end
+if musicnum == 11 then
+    music.SoundId = "rbxassetid://1055930631"
+end
+if musicnum == 12 then
+    music.SoundId = "rbxassetid://300269553"
+end
+if musicnum == 13 then
+    music.SoundId = "rbxassetid://199897052"
+end
+if musicnum == 14 then
+  music.SoundId = "rbxassetid://638115895"  
+end
 
 if spd < 14 then
 Humanoid.Jump = true
@@ -1404,7 +1463,11 @@ end
 		 
 
 
-
+mouse.KeyDown:connect(function(key)
+if key == 'm' and attack == false then
+changemusic()
+end
+end)
 
 local MutedMusic = false
 mouse.KeyDown:connect(function(key)
