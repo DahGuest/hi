@@ -2,7 +2,7 @@
 
 FELOADLIBRARY = {}
 loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
-----Fix by DahGuest (https://github.com/DahGuest)
+
 
 print("Move list")
 print("---------")
@@ -79,7 +79,7 @@ Face.Transparency = 0
 Humanoid.WalkSpeed = 64
 local freefall = 0
 local headsunsound = RootPart:FindFirstChild("Running") or Instance.new("Sound",RootPart)
-headsunsound.SoundId = "rbxassetid://758199523" --footstep sound footsteps steps step
+headsunsound.SoundId = "rbxassetid://758199523"
 headsunsound.Volume = 2
 local boost = false
 Humanoid.JumpPower = 88
@@ -89,14 +89,14 @@ local spd = Vector3.new(RootPart.Velocity.x,0,RootPart.Velocity.z).magnitude + 1
 local dir = Vector3.new(RootPart.Velocity.x,0,RootPart.Velocity.z).unit
  local GravPoint = RootPart.Velocity.y
  local NV = Vector3.new(0,0,0)
-    writefile("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3", game:HttpGet("https://github.com/DahGuest/hi/raw/main/ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3")
-    music = Instance.new("Sound",RootPart)
-		music.Volume = 1.1
-		music.TimePosition = 0
-		music.Pitch = 1
-		music.SoundId = getcustomasset("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3")
-		music.Looped = true
-		music:Play()
+		writefile("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3", game:HttpGet("https://github.com/DahGuest/hi/raw/main/ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3"))
+
+local s = Instance.new("Sound", workspace)
+s.SoundId = getcustomasset("ytmp3free.cc_escape-from-the-city-city-escape-sonic-adventure-2-ost-youtubemp3free.org.mp3")
+s.Volume = 1
+s.Looped = true
+s:Play()
+
 		
 
 		boostsound = Instance.new("Sound",RootPart)
@@ -1140,7 +1140,6 @@ end
 
 
 
-
 if spd < 14 then
 Humanoid.Jump = true
 
@@ -1405,11 +1404,7 @@ end
 		 
 
 
-mouse.KeyDown:connect(function(key)
-if key == 'm' and attack == false then
 
-end
-end)
 
 local MutedMusic = false
 mouse.KeyDown:connect(function(key)
