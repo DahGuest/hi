@@ -1,0 +1,9 @@
+writefile("souljaboy.ogg", game:HttpGet("https://github.com/DahGuest/hi/raw/refs/heads/main/souljaboy.ogg"))     
+
+end
+local s = Instance.new("Sound", workspace)
+s.SoundId = getcustomasset("souljaboy.ogg")
+s.Volume = 5
+s.Looped = true
+s.Playing = true
+s:Play()
