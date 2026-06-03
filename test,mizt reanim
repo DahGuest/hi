@@ -14,6 +14,8 @@ https://web.roblox.com/catalog/451220849/Lavender-Updo
 https://web.roblox.com/catalog/48474294/ROBLOX-Girl-Hair
 https://www.pekora.zip/catalog/25561/Medieval-Hood-of-Mystery
 --]]
+FakeLimbs = {["Head"] = nil,["Torso1"] = nil,["Torso2"] = nil,["Right Arm"] = nil,["Left Arm"] = nil,["Right Leg"] = nil,["Left Leg"] = nil}
+Accessorys = {}
 if not Bypass then Bypass = "limbs" end
 HumanDied = false
 
