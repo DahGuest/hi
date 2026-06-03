@@ -40,8 +40,9 @@ end
 if _G.netted ~= true then
     _G.netted = true
     coroutine.wrap(function()
+        -- fixed enum spelling only (no behavior change)
         settings().Physics.PhysicsEnvironmentalThrottle =
-            Enum.EnviromentalPhysicsThrottle.Disabled
+            Enum.EnvironmentalPhysicsThrottle.Disabled
         settings().Physics.ThrottleAdjustTime = math.huge * math.huge
         settings().Physics.AllowSleep = false
         game:GetService("RunService").RenderStepped:Connect(
@@ -145,12 +146,12 @@ for _, v in next, DeadChar:GetChildren() do
                 SCIFIMOVIELOL(v.Handle, CloneChar[v.Name].Handle,
                               Vector3.new(0, 0, 0), Vector3.new(0, 0, 0))
                 --[[while true do
-					game:GetService("RunService").RenderStepped:wait()
-					if HumanDied then break end
-					local alipos = CloneChar[v.Name].Handle:FindFirstChildOfClass("AlignPosition")
-					local alirot = CloneChar[v.Name].Handle:FindFirstChildOfClass("AlignOrientation")
-					v.Handle.CFrame = alipos.Attachment1.Parent.CFrame * CFrame.new(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alirot.Attachment1.Rotation.X),math.rad(alirot.Attachment1.Rotation.Y),math.rad(alirot.Attachment1.Rotation.Z))
-				end]]
+                    game:GetService("RunService").RenderStepped:wait()
+                    if HumanDied then break end
+                    local alipos = CloneChar[v.Name].Handle:FindFirstChildOfClass("AlignPosition")
+                    local alirot = CloneChar[v.Name].Handle:FindFirstChildOfClass("AlignOrientation")
+                    v.Handle.CFrame = alipos.Attachment1.Parent.CFrame * CFrame.new(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alirot.Attachment1.Rotation.X),math.rad(alirot.Attachment1.Rotation.Y),math.rad(alirot.Attachment1.Rotation.Z))
+                end]]
             end
         end)()
     end
@@ -278,14 +279,14 @@ SCIFIMOVIELOL(DeadChar["Right Leg"], CloneChar["Right Leg"],
 for _, v in pairs(DeadChar:GetChildren()) do
     if v:IsA("BasePart") and v.Name ~= "Head" then
         --[[local bv = Instance.new("BodyVelocity",v)
-		bv.Velocity = Vector3.new(0,0,0)
-		coroutine.wrap(function()
-			while true do
-				game:GetService("RunService").RenderStepped:wait()
-				if HumanDied then break end
-				v.CFrame = CloneChar[v.Name].CFrame
-			end
-		end)()]]
+        bv.Velocity = Vector3.new(0,0,0)
+        coroutine.wrap(function()
+            while true do
+                game:GetService("RunService").RenderStepped:wait()
+                if HumanDied then break end
+                v.CFrame = CloneChar[v.Name].CFrame
+            end
+        end)()]]
     elseif v:IsA("BasePart") and v.Name == "Head" then
         local bv = Instance.new("BodyVelocity", v)
         bv.Velocity = Vector3.new(0, 0, 0)
@@ -345,7 +346,7 @@ function RUNANIMATESCRIPT(FOLDER)
         },
         toolslash = {
             {id = "http://www.roblox.com/asset/?id=129967390", weight = 10}
-            --				{ id = "slash.xml", weight = 10 } 
+            --              { id = "slash.xml", weight = 10 } 
         },
         toollunge = {
             {id = "http://www.roblox.com/asset/?id=129967478", weight = 10}
@@ -403,7 +404,7 @@ function RUNANIMATESCRIPT(FOLDER)
         -- check for config values
         local config = FOLDER:FindFirstChild(name)
         if (config ~= nil) then
-            --		print("Loading anims " .. name)
+            --      print("Loading anims " .. name)
             table.insert(animTable[name].connections,
                          config.ChildAdded:connect(
                              function(child)
@@ -434,7 +435,7 @@ function RUNANIMATESCRIPT(FOLDER)
                     animTable[name].totalWeight =
                         animTable[name].totalWeight +
                             animTable[name][idx].weight
-                    --			print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
+                    --          print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
                     idx = idx + 1
                 end
             end
@@ -451,7 +452,7 @@ function RUNANIMATESCRIPT(FOLDER)
                 animTable[name].count = animTable[name].count + 1
                 animTable[name].totalWeight =
                     animTable[name].totalWeight + anim.weight
-                --			print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
+                --          print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
             end
         end
     end
@@ -539,10 +540,10 @@ function RUNANIMATESCRIPT(FOLDER)
             roll = roll - animTable[animName][idx].weight
             idx = idx + 1
         end
-        --		print(animName .. " " .. idx .. " [" .. origRoll .. "]")
+        --      print(animName .. " " .. idx .. " [" .. origRoll .. "]")
         local anim = animTable[animName][idx].anim
 
-        -- switch animation		
+        -- switch animation     
         if (anim ~= currentAnimInstance) then
 
             if (currentAnimTrack ~= nil) then
@@ -582,7 +583,7 @@ function RUNANIMATESCRIPT(FOLDER)
 
     function toolKeyFrameReachedFunc(frameName)
         if (frameName == "End") then
-            --		print("Keyframe : ".. frameName)	
+            --      print("Keyframe : ".. frameName)    
             playToolAnimation(toolAnimName, 0.0, Humanoid)
         end
     end
@@ -596,7 +597,7 @@ function RUNANIMATESCRIPT(FOLDER)
             roll = roll - animTable[animName][idx].weight
             idx = idx + 1
         end
-        --		print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
+        --      print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
         local anim = animTable[animName][idx].anim
 
         if (toolAnimInstance ~= anim) then
@@ -765,7 +766,7 @@ function RUNANIMATESCRIPT(FOLDER)
             playAnimation("walk", 0.1, Humanoid)
         elseif (pose == "Dead" or pose == "GettingUp" or pose == "FallingDown" or
             pose == "Seated" or pose == "PlatformStanding") then
-            --		print("Wha " .. pose)
+            --      print("Wha " .. pose)
             stopAllAnimations()
             amplitude = 0.1
             frequency = 1
