@@ -145,7 +145,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 
 	local function MoveClone(X,Y,Z)
 	LVecPart.CFrame = LVecPart.CFrame * CFrame.new(-X,Y,-Z)
-	workspace["non"].Humanoid.WalkToPoint = LVecPart.Position
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = LVecPart.Position
 	end
 
 	coroutine.wrap(function() 
@@ -157,7 +157,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 	if DDown then MoveClone(-1e4,0,0) end
 	if SpaceDown then CloneChar["Humanoid"].Jump = true end
 	if WDown ~= true and ADown ~= true and SDown ~= true and DDown ~= true then
-	workspace["non"].Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
 	end 
 	end)()
 
@@ -518,7 +518,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 
 	local function MoveClone(X,Y,Z)
 	LVecPart.CFrame = LVecPart.CFrame * CFrame.new(-X,Y,-Z)
-	workspace["non"].Humanoid.WalkToPoint = LVecPart.Position
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = LVecPart.Position
 	end
 
 	coroutine.wrap(function() 
@@ -530,7 +530,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 	if DDown then MoveClone(-1e4,0,0) end
 	if SpaceDown then CloneChar["Humanoid"].Jump = true end
 	if WDown ~= true and ADown ~= true and SDown ~= true and DDown ~= true then
-	workspace["non"].Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
 	end 
 	end)()
 
