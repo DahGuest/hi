@@ -14,8 +14,7 @@ https://web.roblox.com/catalog/451220849/Lavender-Updo
 https://web.roblox.com/catalog/48474294/ROBLOX-Girl-Hair
 https://www.pekora.zip/catalog/25561/Medieval-Hood-of-Mystery
 --]]
-FakeLimbs = {["Head"] = nil,["Torso1"] = nil,["Torso2"] = nil,["Right Arm"] = nil,["Left Arm"] = nil,["Right Leg"] = nil,["Left Leg"] = nil}
-Accessorys = {}
+Bypass = "limbs"
 if not Bypass then Bypass = "limbs" end
 HumanDied = false
 
@@ -86,7 +85,7 @@ if game:GetService("Players").LocalPlayer.Character.Humanoid.RigType == Enum.Hum
 if Bypass == "limbs" then --------------------------------------------------------------------------------------------------------------------
 	game:GetService("Players").LocalPlayer["Character"].Archivable = true 
 	local CloneChar = game:GetService("Players").LocalPlayer["Character"]:Clone()
-	CloneChar.Parent = workspace 
+	CloneChar.Parent = game:GetService("Players").LocalPlayer.Character 
 	CloneChar.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer["Character"].HumanoidRootPart.CFrame * CFrame.new(0,2,0)
 	wait() 
 	CloneChar.Humanoid.BreakJointsOnDeath = false
@@ -460,7 +459,7 @@ else
 if Bypass == "limbs" then --------------------------------------------------------------------------------------------------------------------
 	game:GetService("Players").LocalPlayer["Character"].Archivable = true 
 	local CloneChar = game:GetObjects("rbxassetid://5227463276")[1]
-	CloneChar.Parent = workspace 
+	CloneChar.Parent = game:GetService("Players").LocalPlayer.Character 
 	CloneChar.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer["Character"].HumanoidRootPart.CFrame * CFrame.new(0,0.5,0.1)
 	CloneChar.Humanoid.BreakJointsOnDeath = false
 	workspace.Camera.CameraSubject = CloneChar.Humanoid 
