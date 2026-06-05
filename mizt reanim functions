@@ -1,0 +1,26 @@
+local CDDF = {}
+local Fling = true --// Recommended: true
+local FlingBlockInvisible = true --// Recommended: false (So you can see the flinging block)
+local HighlightFlingBlock = false --// Recommended: true
+local FlingHighlightColor = Color3.fromRGB(55,55,255)
+local DamageFling = function(DmgPer)
+    if Fling ~= true then return end
+	if IsDead or Bypass ~= "death" or (DmgPer.Name == playerss.Name and DmgPer.Name == "non") or CDDF[DmgPer] or not DmgPer or not DmgPer:FindFirstChildOfClass("Humanoid") or DmgPer:FindFirstChildOfClass("Humanoid").Health <= 0 then return end
+	CDDF[DmgPer] = true; StateMover = false
+	local PosFling = (DmgPer:FindFirstChild("HumanoidRootPart") and DmgPer:FindFirstChild("HumanoidRootPart") .CFrame.p) or (DmgPer:FindFirstChildOfClass("Part") and DmgPer:FindFirstChildOfClass("Part").CFrame.p)
+    bullet.Rotation = playerss.Torso.Rotation
+    bbav = Instance.new("BodyAngularVelocity",bullet)
+    bbav.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+    bbav.P = 100000000000000000000000000000
+    bbav.AngularVelocity = Vector3.new(10000000000000000000000000000000,100000000000000000000000000,100000000000000000)
+
+	for _=1,15 do
+		bbv.Position = PosFling
+		bullet.Position = PosFling
+		wait(0.03)
+	end
+	bbav:Destroy()
+	bbv.Position = playerss.Torso.CFrame.p
+    bullet.Position = playerss.Torso.CFrame.p
+	CDDF[DmgPer] = false; StateMover = true
+end
