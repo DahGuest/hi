@@ -157,7 +157,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 	if DDown then MoveClone(-1e4,0,0) end
 	if SpaceDown then CloneChar["Humanoid"].Jump = true end
 	if WDown ~= true and ADown ~= true and SDown ~= true and DDown ~= true then
-	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = game.Players.LocalPlayer.Character.non.HumanoidRootPart.Position end
 	end 
 	end)()
 
@@ -530,7 +530,7 @@ if Bypass == "limbs" then ------------------------------------------------------
 	if DDown then MoveClone(-1e4,0,0) end
 	if SpaceDown then CloneChar["Humanoid"].Jump = true end
 	if WDown ~= true and ADown ~= true and SDown ~= true and DDown ~= true then
-	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = workspace["non"].HumanoidRootPart.Position end
+	game.Players.LocalPlayer.Character.non.Humanoid.WalkToPoint = game.Players.LocalPlayer.Character.non.HumanoidRootPart.Position end
 	end 
 	end)()
 
